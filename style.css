@@ -43,3 +43,42 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+body{
+	display: flex;
+	flex-direction: column;
+	background-color: #cbd5e1;
+}
+.books{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.books div{
+    width:300px;
+	border-style: solid;
+}
+table{
+	border-style: solid;
+	height: 100%;
+	width: 100%;
+}
+thead{
+	border-bottom: solid;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	background-color: #0891b2;
+	color: rgb(255, 255, 255);
+	align-items: center;
+	border-style: solid;
+	border-color: #0c4a6e;
+	padding: 10px;
+	border-radius: 15px;
+}
+input[type =text]{
+	width:80%;
+}
+input[type=number]{
+	width: 80%;
+}

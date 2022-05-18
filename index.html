@@ -9,7 +9,25 @@
     <title>My Library!</title>
 </head>
 <body>
-    <header>Reading is cool!</header>
+    <div class="form-popup" id="myForm">
+        <form action="">
+            <h1>Add book</h1>
+            <label for="book-title">Book Title</label>
+            <input type="text" name="title" id="book-title" required>
+
+            <label for="book-author">Author name</label>
+            <input type="text" name="author" id="book-author" required>
+
+            <label for="book-pages">How many pages?</label>
+            <input type="number" name="pages" id="book-pages" required>
+
+            <label for="book-status">Read?</label>
+            <input type="checkbox" name="status" id="book-status" required>
+
+            <button type="submit">Add to Library</button>
+        </form>
+        
+    </div>
     <div class="books"></div>
 </body>
 </html>
