@@ -9,8 +9,12 @@
     <title>My Library!</title>
 </head>
 <body>
+    <div class="top">
+        <button id="popup-button">Add</button>
+    </div>
+    
     <div class="form-popup" id="myForm">
-        <form action="">
+        <form action="." class="myForm" >
             <h1>Add book</h1>
             <label for="book-title">Book Title</label>
             <input type="text" name="title" id="book-title" required>
@@ -22,11 +26,11 @@
             <input type="number" name="pages" id="book-pages" required>
 
             <label for="book-status">Read?</label>
-            <input type="checkbox" name="status" id="book-status" required>
+            <input type="checkbox" name="status" id="book-status" value="Read">
 
-            <button type="submit">Add to Library</button>
+            <button type="submit" id="submitButton">Add to Library</button>
+            <button type="reset" id="cancelButton">Cancel</button>
         </form>
-        
     </div>
     <div class="books"></div>
 </body>
