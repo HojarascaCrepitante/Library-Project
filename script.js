@@ -80,6 +80,7 @@ let myBooks = document.querySelector('.books')
                         return bookObj
                 }
                 function prevent(e){
+                    closeForm()
                     e.preventDefault();
                     createBook(); 
                 }
