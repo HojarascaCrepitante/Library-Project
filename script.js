@@ -48,6 +48,17 @@ let myBooks = document.querySelector('.books')
                         tbody.appendChild(row2);
                 myLibrary.push(book)
                 bookCard.dataset.index = myLibrary.indexOf(book);
+                let removeButton = document.createElement('button')
+                    removeButton.classList.add('removeButton')
+                    removeButton.textContent = 'Remove from Library'
+                    removeButton.addEventListener('click', () =>{
+                        let i = bookCard.dataset.index;
+                        myLibrary.splice(i, 1);
+                        if (bookCard.dataset.index == i){
+                            bookCard.remove()
+                        }
+                })
+                bookCard.appendChild(removeButton)
         };
             
         let popupBtn = document.getElementById('popup-button')
@@ -84,4 +95,4 @@ let myBooks = document.querySelector('.books')
                     e.preventDefault();
                     createBook(); 
                 }
-                
+               
