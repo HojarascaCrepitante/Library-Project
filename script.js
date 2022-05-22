@@ -5,7 +5,6 @@ function Book(title,author,pages,status){
     this.author = author;
     this.pages = pages;
     this.status = status;
-    
 }
 let myBooks = document.querySelector('.books')
         function display(book){
@@ -59,7 +58,25 @@ let myBooks = document.querySelector('.books')
                         }
                 })
                 bookCard.appendChild(removeButton)
-        };
+                let toggleButton = document.createElement('button')
+                    toggleButton.addEventListener('click', toggleFunction)
+                    toggleButton.textContent = "Read/Not read";
+                    toggleButton.setAttribute('id','toggle-button')
+                    bookCard.appendChild(toggleButton)
+                
+               function toggleFunction(){
+                     if(book.status == "Read"){
+                        book.status = "Not read"
+                        row2_data4.textContent = book.status;
+                    }
+                     
+                     else if(book.status == "Not read"){
+                        book.status = "Read";
+                        row2_data4.textContent = book.status;
+                     }
+                     
+                }
+        }
             
         let popupBtn = document.getElementById('popup-button')
             popupBtn.addEventListener('click', popup)
@@ -67,8 +84,10 @@ let myBooks = document.querySelector('.books')
             cancelButton.addEventListener('click', closeForm)
         let myForm = document.querySelector('.myForm')
             myForm.addEventListener('submit', prevent)
+                
                 function popup(){
                     myForm.style.display = "flex";
+                    myForm.style.transition.delay = '4s'
                 }
                 function closeForm(){
                     myForm.style.display = 'none';
