@@ -82,7 +82,8 @@ let myBooks = document.querySelector('.books')
 let actualForm = document.querySelector(".myForm")
 let title = document.getElementById('book-title');
 let author = document.getElementById('book-author');
-let pages = document.getElementById('book-pages');            
+let pages = document.getElementById('book-pages');
+                
 let popupBtn = document.getElementById('popup-button')
             popupBtn.addEventListener('click', popup)
 let cancelButton = document.getElementById('cancelButton')
@@ -90,15 +91,20 @@ let cancelButton = document.getElementById('cancelButton')
 let myFormSubmitButton = document.getElementById('submitButton')
             myFormSubmitButton.addEventListener('click', e =>{
                 e.preventDefault()
-                prevent()
+                if(title.checkValidity()== true && author.checkValidity() == true && pages.checkValidity() == true ){
+                    createMyBook()
+                }
+                else {
+                    title.reportValidity()
+                    author.reportValidity()
+                    pages.reportValidity()
+                }
             })
             
-                
 function popup(){
     actualForm.style.display = "flex";
     actualForm.style.transition.delay = '4s'
 }
-        
 function closeForm(){
     actualForm.style.display = 'none';
 }
@@ -110,7 +116,6 @@ function createBook(){
     let status = document.getElementById('book-status');
 
     
-
         if(!status.checked){
             status = "Not read";
         }
@@ -119,16 +124,17 @@ function createBook(){
             status = "Read"
         }        
         
-    
         let bookObj = new Book(title,author,pages,status);
             console.log(bookObj)
             display(bookObj)
             return bookObj
 }
+    
 
 
-function prevent(){
+
+function createMyBook(){
     closeForm()
     createBook(); 
 }
-               
+ 
